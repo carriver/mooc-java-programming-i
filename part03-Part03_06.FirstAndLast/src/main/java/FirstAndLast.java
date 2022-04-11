@@ -11,6 +11,8 @@ public class FirstAndLast {
         while (true) {
             String input = scanner.nextLine();
             if (input.equals("")) {
+                System.out.println(list.get(0));
+                System.out.println(list.get(list.size() - 1));
                 break;
             }
 
