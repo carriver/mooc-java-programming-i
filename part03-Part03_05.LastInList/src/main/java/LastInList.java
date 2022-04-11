@@ -11,6 +11,7 @@ public class LastInList {
         while (true) {
             String input = scanner.nextLine();
             if (input.equals("")) {
+                System.out.println(list.get(list.size()-1));
                 break;
             }
 
