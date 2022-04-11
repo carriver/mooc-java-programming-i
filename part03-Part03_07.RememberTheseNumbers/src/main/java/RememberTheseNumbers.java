@@ -11,11 +11,14 @@ public class RememberTheseNumbers {
         while (true) {
             int luku = Integer.valueOf(scanner.nextLine());
             if (luku == -1) {
-                break;
+                for (int i = 0; i < numbers.size(); i++) {
+                    System.out.println(numbers.get(i));
+                }
+                    break;
+                }
+
+                numbers.add(luku);
             }
 
-            numbers.add(luku);
         }
-
     }
-}
