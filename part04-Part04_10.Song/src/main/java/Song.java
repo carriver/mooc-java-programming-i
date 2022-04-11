@@ -10,10 +10,10 @@ public class Song {
     }
 
     public String name() {
-        return name;
+        return this.name;
     }
 
     public int length() {
-        return length;
+        return this.length;
     }
 }

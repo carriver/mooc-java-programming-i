@@ -10,11 +10,11 @@ public class Film {
     }
     
     public String name() {
-        return name;
+        return this.name;
     }
     
     public int ageRating() {
-        return ageRating;
+        return this.ageRating;
     }
     
 }
