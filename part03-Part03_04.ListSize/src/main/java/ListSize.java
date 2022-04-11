@@ -11,6 +11,7 @@ public class ListSize {
         while (true) {
             String input = scanner.nextLine();
             if (input.equals("")) {
+                System.out.println("In total: " + list.size());
                 break;
             }
 
