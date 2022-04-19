@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 
 public class Apartment {
 
@@ -10,5 +12,18 @@ public class Apartment {
         this.squares = squares;
         this.princePerSquare = pricePerSquare;
     }
+
+    public boolean largerThan(Apartment compared) {
+        return this.squares > compared.squares;
+    }
+    
+    public int priceDifference(Apartment compared) {
+        return Math.abs((this.squares * this.princePerSquare) - (compared.squares * compared.princePerSquare));
+    }
+    
+    public boolean moreExpensiveThan(Apartment compared) {
+        return (this.squares * this.princePerSquare) > (compared.squares * compared.princePerSquare);
+    }
+    
 
 }
