@@ -22,6 +22,6 @@ public class Menu {
     }
 
     public void clearMenu() {
-        this.meals = new ArrayList<>();
+        this.meals.clear();
     }
 }
