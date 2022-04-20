@@ -1,5 +1,6 @@
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +21,7 @@ public class ExerciseManagementTest {
 
     @Test
     public void addingExerciseGrowsListByOne() {
-        management.add("Write a test ");
+        management.add("Write a test");
         assertEquals(1, management.exerciseList().size());
     }
 
@@ -28,7 +29,19 @@ public class ExerciseManagementTest {
     public void addedExerciseIsInList() {
         management.add("Write a test");
         assertTrue(management.exerciseList().contains("Write a test"));
-
     }
 
+    @Test
+    public void exerciseCanBeMarkedAsCompleted() {
+        management.add("New exercise");
+        management.markAsCompleted("New exercise");
+        assertTrue(management.isCompleted("New exercise"));
+    }
+
+    @Test
+    public void ifNotMarkedCompletedIsNotCompleted() {
+        management.add("New exercise");
+        management.markAsCompleted("New exercise");
+        assertFalse(management.isCompleted("Some exercise"));
+    }
 }
