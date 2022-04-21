@@ -39,12 +39,28 @@ public class Suitcase {
             }
         }
     }
+    
+    public Item heaviestItem() {
+        if (this.items.isEmpty()) {
+            return null;
+        }
+
+        Item heaviest = this.items.get(0);
+
+        for (Item i : this.items) {
+            if (heaviest.getWeight() < i.getWeight()){
+                heaviest = i;
+            }
+        }
+
+        return heaviest;
+    }
 
     @Override
     public String toString() {
 
         if (this.items.isEmpty()) {
-            return "no items";
+            return "no items (0 kg)";
         } else if (this.items.size() == 1) {
             return this.items.size() + " item ("
                     + this.totalWeight() + " kg)";
