@@ -13,6 +13,7 @@ public class Searching {
         for (int i = 0; i < numberOfBooks; i++) {
             books.add(new Book(i, "name for the book " + i));
         }
+        System.out.println(books.toString());
 
         System.out.println("Id of the book to search for?");
         int idToSearchFor = Integer.valueOf(scanner.nextLine());
@@ -44,11 +45,42 @@ public class Searching {
     }
 
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
+        for (int i = 0; i < books.size(); i++) {
+
+            Book book = books.get(i);
+
+            if (book.getId() == searchedId) {
+                return i;
+            }
+        }
+
         return -1;
     }
 
     public static int binarySearch(ArrayList<Book> books, long searchedId) {
+
+        int start = 0;
+        int end = books.size() - 1;
+
+        while (start <= end) {
+            
+            int middle = (start + end) / 2;
+
+            Book book = books.get(middle);
+
+            if (book.getId() == searchedId) {
+                return middle;
+            }
+
+            if (book.getId() < searchedId) {
+                start = middle + 1;
+            }
+
+            if (book.getId() > searchedId) {
+                end = middle - 1;
+            }
+        }
+
         return -1;
     }
 }
-
